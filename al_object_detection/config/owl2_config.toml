@@ -1,0 +1,4 @@
+model_id = "google/owlv2-base-patch16"
+[predict]
+threshold = 0.3
+default_classes = ["car", "van", "truck", "motorcycle", "bicycle", "bus", "person"]

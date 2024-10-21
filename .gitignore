@@ -1,0 +1,17 @@
+__pycache__
+.env
+dataset_venv
+Trainings/*
+exported_datasets/*
+logs/*
+cache/*
+cvat
+
+active_learning_object_detection.ipynb
+active_learning.ipynb
+fiftyone.ipynb
+faradai.ipynb
+best.pt
+yolov8l.pt
+yolov8n.pt
+sample.py
