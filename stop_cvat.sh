@@ -12,3 +12,5 @@ else
   echo "All CVAT containers are up and running. Shutting them down"
   docker compose down
 fi
+
+cd ../ || exit

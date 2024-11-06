@@ -12,3 +12,5 @@ if [ "$containers" -lt "$expected_containers" ]; then
 else
   echo "All CVAT containers are up and running!"
 fi
+
+cd ../ || exit
