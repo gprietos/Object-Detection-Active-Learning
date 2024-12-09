@@ -8,19 +8,28 @@ class BaseSampler:
     def query(
         self,
         dataset: Union[fo.Dataset, fo.DatasetView],
-        budget: int = 100,
-        field: Optional[str] = None,
-        verbose: bool = True,
-    ):
+        budget: int,
+        **kwargs
+    )-> fo.DatasetView:
         """
         Abstract method that must be implemented by all sampler subclasses.
 
         Args:
-            dataset (fiftyone.core.view.DatasetView or fiftyone.core.dataset.Dataset): The FiftyOne dataset.
-            budget (int): Number of samples to query.
-            field (str): An optional field for samplers that need a specific field (e.g., predictions_field)
+            dataset(fiftyone.core.view.DatasetView or fiftyone.core.dataset.Dataset):
+                The FiftyOne dataset or dataset view pool.
+            budget (int, optional): Number of samples to query.
         Returns:
             fiftyone.core.view.DatasetView: A view of the dataset containing the sampled images.
         """
 
+        pass
+
+    @classmethod
+    def from_cache_dict(cls, data: dict):
+        """Restore an UncertaintySampler instance from cached data."""
+        return cls(**data)
+    
+    @abstractmethod
+    def to_cache_dict(self) -> dict:
+        """Return a dictionary representation of the sampler's state."""
         pass

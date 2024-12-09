@@ -26,10 +26,11 @@ class UncertaintySampler:
 
         method (str, optional): method used to compute the uncertainty of each image. Available methods are
             "entropy" and "weighted_entropy".
-            - If set to "entropy", the uncertainty of each image sample is computed as the entropy of the prediction.
+            - If set to "entropy", the uncertainty of each image sample is computed as the entropy of the predictions.
                 uncertainty = Σ (- p_i * log(p_i) - (1 - p_i) * log(1 - p_i)) / N
               where the sum over all detected objects N and p_i represents the predicted probability of the sample i.
-            - If set to "weighted_entropy", the uncertainty of each image sample is computed weighting the.
+            - If set to "weighted_entropy", the uncertainty of each image sample is computed by weighting the entropy 
+              of the predictions with the difficulty of its corresponding class, as defined in class_wise_difficulty_dict
                 weighted_uncertainty =  Σ w(cls_i) * (- p_i * log(p_i) - (1 - p_i) * log(1 - p_i))) / N
               where the sum over all detected objects N, p_i represents the predicted probability of the sample
               belonging to class cls_i, and w corresponds to category-wise difficulty coefficient, which is computed

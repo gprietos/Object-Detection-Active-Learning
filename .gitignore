@@ -1,12 +1,16 @@
 __pycache__
 .env
-dataset_venv
+venv
 Trainings/*
 exported_datasets/*
 logs/*
 cache/*
 cvat
+al_object_detection.egg-info
+build
 
+dataset_venv
+borrar_venv
 active_learning_object_detection.ipynb
 active_learning.ipynb
 fiftyone.ipynb

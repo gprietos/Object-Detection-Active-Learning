@@ -7,9 +7,9 @@ def get_requirements():
 
 
 setup(
-    name='active_learning_object_detection',
+    name='al_object_detection',
     version='1.0.0',
-    author="Guillermo Prieto Sánchz",
+    author="Guillermo Prieto Sánchez",
     author_email="gprietos@indra.es",
     packages=find_packages(),
     python_requires='>=3.8,<3.11',

@@ -22,7 +22,7 @@ def add_split_tags(dataset, prop: dict = {"train": 0.8, "val": 0.1, "test": 0.1}
 def exclude_large_patch_fields(dataset_pool, label_field):
     large_fields = set()
     for sample in dataset_pool:
-        detections = getattr(sample, label_field).detections
+        detections = getattr(sample, f"{label_field}.detections", [])
         for detection in detections:
             for field_name, field_value in detection.iter_fields():
                 if len(str(field_value)) > 4096:

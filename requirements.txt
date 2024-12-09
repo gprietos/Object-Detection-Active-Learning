@@ -1,0 +1,9 @@
+fiftyone==0.25.2
+ultralytics==8.2.100
+transformers==4.45.1
+python-dotenv==1.0.1
+alive-progress==3.1.5
+scikit-learn-extra==0.3.0
+termcolor==2.4.0
+toml==0.10.2
+tqdm==4.66.5

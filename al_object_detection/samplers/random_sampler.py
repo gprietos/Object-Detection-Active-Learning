@@ -4,7 +4,7 @@ from typing import Union
 
 class RandomSampler:
     """
-    A class to sample a the most uncertain subset of images samples based on object detector predictions.
+    A class to take random samples out of the dataset pool.
 
     Args: 
         budget_expansion_ratio (int, optional): hyperparameter that increases the initial query size to ensure
@@ -30,7 +30,7 @@ class RandomSampler:
         Args:
             dataset(fiftyone.core.view.DatasetView or fiftyone.core.dataset.Dataset):
                 The FiftyOne dataset or dataset view pool.
-            budget (int, optional): The number of uncertain samples to select. Defaults to 100.
+            budget (int, optional): The number of random samples to query. Defaults to 100.
         Returns:
             fiftyone.core.view.DatasetView: A dataset view containing the subset of random samples.
         """

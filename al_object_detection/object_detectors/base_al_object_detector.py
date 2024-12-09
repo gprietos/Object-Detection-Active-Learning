@@ -1,16 +1,24 @@
+import fiftyone as fo
+from typing import Union, Optional
 from abc import abstractmethod
+from pathlib import Path
 
 
 class BaseALObjectDetector:
-    def __init__():
+    @abstractmethod
+    def predict(self,
+                dataset,
+                label_field: Optional[str] = None,
+                al_round: int = 0):
         pass
 
     @abstractmethod
-    def predict():
-        pass
-
-    @abstractmethod
-    def train():
+    def train(self,
+              dataset: Union[fo.Dataset, fo.DatasetView],
+              export_dir: Union[str, Path, None] = None,
+              train_folder_path: Union[str, Path] = None,
+              al_round: int = 0
+              ):
         pass
 
     @classmethod
