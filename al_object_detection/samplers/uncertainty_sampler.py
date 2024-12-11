@@ -153,7 +153,7 @@ class UncertaintySampler:
 
         sorted_uncertainty_samples = dataset.sort_by("uncertainty", reverse=True)
 
-        return sorted_uncertainty_samples.take(budget * self.budget_expansion_ratio)
+        return sorted_uncertainty_samples[budget * self.budget_expansion_ratio]
 
     @classmethod
     def from_cache_dict(cls, data: dict):
