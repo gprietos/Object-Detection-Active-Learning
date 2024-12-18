@@ -61,8 +61,8 @@ class Annotator:
     def load_annotations(self, dataset, dest_field="ground_truth", cleanup=True, tag_samples=True):
         pool = dataset.load_annotation_view(anno_key=self.anno_key)
         if tag_samples:
-            pool.untag_samples("unlabelled")
             pool.tag_samples("labelled")
+            pool.untag_samples("unlabelled")
             pool.save()
 
         dataset.load_annotations(anno_key=self.anno_key, dest_field=dest_field, cleanup=cleanup)
