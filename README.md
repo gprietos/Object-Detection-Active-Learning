@@ -1,8 +1,10 @@
 # Object Detection Active Learning
 
-This module uses a technique known as **active learning**, in which a labeling model intelligently **selects which images should be annotated** along with their preliminary labeling. This allows this model to **learn from the most useful examples**, progressively improving its ability to generate reliable automatic labels and optimizing the resources dedicated to the annotation process. In this way, **quality datasets with relevant and diverse images** are generated that allow **robust and accurate AI models** to be subsequently trained.
+This repository uses a technique known as **active learning**, in which a labeling model intelligently **selects which images should be annotated** along with their preliminary labeling. This allows this model to **learn from the most useful examples**, progressively improving its ability to generate reliable automatic labels and optimizing the resources dedicated to the annotation process. In this way, **quality datasets with relevant and diverse images** are generated that allow **robust and accurate AI models** to be subsequently trained.
 
 ## Overview
+
+<img width="100%" src="assets/images/active_learning_schema.png" alt="active_learning_schema"></a>
 
 The active learning cycle is an **iterative process** with a set number of rounds, where the model progressively improves by selecting, labeling, and learning from the most informative samples in an unlabeled dataset, with the ultimate goal of building a high-quality labeled dataset for robust model training. Each round has the following stages:
 
@@ -18,14 +20,12 @@ The active learning cycle is an **iterative process** with a set number of round
 
 - **Training the Model**: Retrain the model on the updated labeled dataset, enhancing its accuracy and robustness with each iteration of the cycle.
 
-<img width="100%" src="assets/images/active_learning_schema.png" alt="active_learning_schema"></a>
-
 ## Getting Started
 
 First you need to clone the repository.
 
 ```bash
-git clone REPO_LINK
+git clone https://github.com/gprietos/Object-Detection-Active-Learning
 ```
 
 <details open>
